@@ -19,4 +19,8 @@ def parse(root_text):
 if __name__ == "__main__":
     root_text = root_text_fn.read_text()
     root_verses = parse(root_text)
-    json.dump(root_verses, root_json_fn.open("w"), ensure_ascii=False, indent=2)
+    data = {
+            "title": "བཤེས་པའི་སྤྲིང་ཡིག་གི་རྩ་བ།",
+            "content": root_verses
+    }
+    json.dump(data, root_json_fn.open("w"), ensure_ascii=False, indent=2)
